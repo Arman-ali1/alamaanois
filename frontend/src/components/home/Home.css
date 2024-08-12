@@ -1,0 +1,70 @@
+.body122{
+    background-image: url('../../assets/is2.png');
+
+}
+
+.animation  h1{
+    /* color: red; */
+    background: linear-gradient(90deg , #ff0000, #ff00c4);
+    color: transparent;
+    animation: effect 10s ease-in-out infinite;
+}
+@keyframes effect {
+    0%{
+        background: linear-gradient(90deg , #ff0000, #ffff00,);
+        -webkit-background-clip: text;
+    }
+    25%{
+        background: linear-gradient(90deg , #ff00f3, #0033ff);
+        -webkit-background-clip: text;
+    }
+    50% {
+        background: linear-gradient(90deg , #a0b2a0, #00FF00);
+        
+        -webkit-background-clip: text;
+    }
+    75% {
+        background: linear-gradient(90deg , #ff00c4, #ff0000);
+        
+        -webkit-background-clip: text;
+    }
+
+    100% {
+        background: linear-gradient(90deg , #3CE7D7, #000FFF);
+        -webkit-background-clip: text;
+    }
+    
+}
+
+.coloranimation{
+    /* color: red; */
+    background: linear-gradient(90deg , #ff0000, #ff00c4);
+    color: transparent;
+    animation: effect 10s ease-in-out infinite;
+}
+@keyframes effect {
+    0%{
+        background: linear-gradient(90deg , #ff0000, #ffff00,);
+        -webkit-background-clip: text;
+    }
+    25%{
+        background: linear-gradient(90deg , #ff00f3, #0033ff);
+        -webkit-background-clip: text;
+    }
+    50% {
+        background: linear-gradient(90deg , #a0b2a0, #00FF00);
+        
+        -webkit-background-clip: text;
+    }
+    75% {
+        background: linear-gradient(90deg , #ff00c4, #ff0000);
+        
+        -webkit-background-clip: text;
+    }
+
+    100% {
+        background: linear-gradient(90deg , #3CE7D7, #000FFF);
+        -webkit-background-clip: text;
+    }
+    
+}
