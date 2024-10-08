@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import React from "react";
 import {
   Disclosure,
@@ -10,6 +10,12 @@ import logo from "../assets/images/logo.jpeg"; // Ensure the logo path is correc
 import { NavLink } from "react-router-dom";
 
 const HeaderNew = () => {
+
+  const location = useLocation();
+    const userData = location.state?.UserStatus || {};
+    let login=userData.lgn;
+    console.log("login===",login);
+    
   const navigate = useNavigate(); // Hook to navigate programmatically
 
   const handleLoginClick = () => {
@@ -32,9 +38,9 @@ const HeaderNew = () => {
           </div>
 
           {/* Logo */}
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex flex-shrink-0 items-center">
-              <img className="h-8 w-auto navbarlogo" src={logo} alt="Logo" />
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start ">
+            <div className="flex flex-shrink-0 items-center ">
+              <img className="h-8 w-auto navbarlogo " src={logo} alt="Logo" />
             </div>
             {/* Navigation Links */}
             <div className="hidden sm:ml-6 sm:block">
@@ -182,7 +188,7 @@ const HeaderNew = () => {
               onClick={handleLoginClick}
             >
               <span className="sr-only">Login</span>
-              Login
+              {login?login:"Login"}
             </button>
             <button
               type="button"

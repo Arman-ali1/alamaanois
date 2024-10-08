@@ -42,8 +42,8 @@ function App() {
           <Route path="/courses" element={<ComingSoon />} />
           <Route path="/library" element={<ComingSoon />} />
           <Route path="/blogs" element={<ComingSoon />} />
-          <Route path="/contact" element={<ComingSoon />} />
-          <Route path="/login" element={<ComingSoon />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/donate" element={<ComingSoon />} />
         </Routes>
         <FooterWrapper />
