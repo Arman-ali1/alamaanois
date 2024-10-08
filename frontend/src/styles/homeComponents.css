@@ -1,0 +1,45 @@
+/* WelcomeSection.jsx */
+
+.h1welcometext {
+    text-shadow: 2px 2px 4px black;
+}
+
+.fonticons {
+    color: #163809;
+}
+
+.knowmorebtn {
+    background-color: #163809;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: large;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.knowmorebtn:hover {
+    background-color: #1F2937;
+}
+
+.bgimagefordiv {
+    border-radius: 10px;
+    background-image: url('../assets/images/img12.jpg'); /* Use the correct path */
+    background-size: cover; /* Adjusts the size of the background image */
+    background-position: center;
+}
+
+.fonticontypesec {
+    background-color: #163809;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.fonticonslink:hover {
+    color: #1F2937;
+}
+
