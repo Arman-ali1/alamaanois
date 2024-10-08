@@ -43,7 +43,7 @@ const HeaderNew = () => {
               <img className="h-8 w-auto navbarlogo " src={logo} alt="Logo" />
             </div>
             {/* Navigation Links */}
-            <div className="hidden sm:ml-6 sm:block">
+            <div className="hidden sm:ml-6 sm:block ">
               <div className="flex space-x-4 items-center">
                 {" "}
                 {/* Added items-center here */}
@@ -181,7 +181,7 @@ const HeaderNew = () => {
               </div>
             </div>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center space-x-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className=" inset-y-0 right-0 flex items-center space-x-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
               className="relative rounded-full bg-green-900 py-2 px-3 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
