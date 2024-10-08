@@ -65,7 +65,7 @@ const OurteachersSection = () => {
               />
 
               <h3 className="text-2xl font-medium mb-2">Mufti Irfan Azhari</h3>
-              <p>Principal & Co-founder, Al Amaan</p>
+              <p>Principal & Co-founder, Al Amaan Ois</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
