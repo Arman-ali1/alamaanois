@@ -28,7 +28,7 @@ const WelcomSection = () => {
                 <span>
                   <FaCheckCircle size={20} className="fonticons" />
                 </span>
-                <span className="ml-2">Quraan (Tazweed, Tafseer)</span>
+                <span className="ml-2">Quraan (Tajweed, Tafseer)</span>
               </div>
               <div className="p-0 flex items-center">
                 <span>
@@ -71,7 +71,7 @@ const WelcomSection = () => {
               </div>
               <div>
                 <h4 className="text-xl font-medium">
-                  Call to ask any question
+                Contact for more information
                 </h4>
                 <p className="text-2xl font-medium">+91 7903337066</p>
               </div>

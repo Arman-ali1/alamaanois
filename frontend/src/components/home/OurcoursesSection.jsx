@@ -34,7 +34,7 @@ const OurcoursesSection = () => {
             <div className="card bg-gray-50 flex flex-col items-center justify-center gap-4 p-4 shadow-inner">
               <FaBook size={20} className="fonticons" />
               <h3 className="text-2xl font-medium mb-2">Quraan Course</h3>
-              <p>Learn tazweed and tafseer</p>
+              <p>Learn tajweed and tafseer</p>
               <FaArrowCircleRight
                 size={50}
                 className="fonticons fonticonslink"
@@ -67,7 +67,7 @@ const OurcoursesSection = () => {
             <div className="card bg-gray-50 flex flex-col items-center justify-center gap-4 p-4 shadow-inner mb-5">
               <FaBook size={20} className="fonticons" />
               <h3 className="text-2xl font-medium mb-2">Aqaid Course</h3>
-              <p>Learn Islamic Aqaid and strengthen your imaan</p>
+              <p>Learn Islamic Aqaid and strengthen your Eimaan</p>
               <FaArrowCircleRight
                 size={50}
                 className="fonticons fonticonslink"
@@ -76,7 +76,7 @@ const OurcoursesSection = () => {
             <div className="card bg-gray-50 flex flex-col items-center justify-center gap-4 p-4 shadow-inner">
               <FaBook size={20} className="fonticons" />
               <h3 className="text-2xl font-medium mb-2">Arabic Language</h3>
-              <p>Learn the language of your Prophet ﷺ</p>
+              <p>Learn the language of paradise, language of Quran and Language of your beloved prophet ﷺ</p>
               <FaArrowCircleRight
                 size={50}
                 className="fonticons fonticonslink"
