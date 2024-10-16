@@ -1,0 +1,8 @@
+{
+    "rewrites":[
+        {
+            "source": "/alamaanois/:path*",
+            "destination": "https://www.alamaanois.com/:path*"
+        }
+    ]
+}

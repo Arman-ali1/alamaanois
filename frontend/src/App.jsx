@@ -47,6 +47,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/donate" element={<ComingSoon />} />
           <Route path="/enrollinclass/:classid" element={<EnrollmentClass />} />
+          //https://www.alamaanois.com/enrollinclass?classid=9651253
+
         </Routes>
         <FooterWrapper />
       </Router>
