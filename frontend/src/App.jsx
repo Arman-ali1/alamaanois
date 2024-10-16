@@ -17,6 +17,7 @@ import Login from "./pages/Login";
 import Donate from "./pages/Donate";
 import ComingSoon from "./pages/ComingSoon";
 import Footer from "./components/Footer";
+import EnrollmentClass from "./components/EnrollmentClass/EnrollmentClass.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -45,6 +46,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/donate" element={<ComingSoon />} />
+          <Route path="/enrollinclass/:classid" element={<EnrollmentClass />} />
         </Routes>
         <FooterWrapper />
       </Router>
