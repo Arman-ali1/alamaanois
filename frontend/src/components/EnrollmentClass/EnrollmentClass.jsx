@@ -15,7 +15,7 @@ function EnrollmentClass() {
         var websiteUrl = "https://www.alamaanois.com/";
 
         // Check if the user is on an Android device
-        var isAndroid = /Android/i.test(navigator.userAgent);
+        var isAndroid = /Android/i.test(navigatorr.userAgent);
 
         if (isAndroid) {
             // Try to open the app using the deep link
