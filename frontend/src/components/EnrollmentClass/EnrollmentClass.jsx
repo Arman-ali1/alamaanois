@@ -42,9 +42,9 @@ if (isAndroid) {
 }
 
 // Clear timeout when app is opened (user navigates away from the page)
-window.onblur = function() {
-    clearTimeout(timeout);
-};
+// window.onblur = function() {
+//     clearTimeout(timeout);
+// };
 
     
 
