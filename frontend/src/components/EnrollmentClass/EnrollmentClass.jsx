@@ -6,38 +6,46 @@ function EnrollmentClass() {
         const { classid } = useParams()
         
         // Define the deep link URL to open the app
-        var appUrl = "intent://enrollclass#Intent;scheme=https;package=alamaan.ois;end";
+        // Define URLs for app deep linking, Play Store, App Store, and website
+var androidAppUrl = "intent://enrollclass#Intent;scheme=https;package=alamaan.ois;end";
+var iOSAppUrl = "alamaan://enrollclass"; // Hypothetical iOS deep link (replace with your actual scheme)
+var playStoreUrl = "https://play.google.com/store/apps/details?id=alamaan.ois";
+var appStoreUrl = "https://apps.apple.com/app/id123456789"; // Replace with actual App Store URL
+var websiteUrl = "https://www.alamaanois.com/";
 
-        // Define the URL to open the Play Store
-        var playStoreUrl = "https://play.google.com/store/apps/details?id=alamaan.ois";
+// User-agent detection for Android, iOS, and desktop (Windows, macOS)
+var isAndroid = /Android/i.test(navigator.userAgent);
+var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+var isDesktop = /Windows|Macintosh/i.test(navigator.userAgent);
 
-        // Define the homepage of your website
-        var websiteUrl = "https://www.alamaanois.com/";
+if (isAndroid) {
+    // Android flow: try deep linking, fallback to Play Store
+    window.location = androidAppUrl;
+    var timeout = setTimeout(function() {
+        window.location = playStoreUrl;
+    }, 2000);
 
-        // Check if the user is on an Android device
-        var isAndroid = /Android/i.test(navigatorr.userAgent);
+} else if (isIOS) {
+    // iOS flow: try deep linking, fallback to App Store
+    window.location = iOSAppUrl;
+    var timeout = setTimeout(function() {
+        window.location = appStoreUrl;
+    }, 2000);
 
-        if (isAndroid) {
-            // Try to open the app using the deep link
-            window.location = appUrl;
+} else if (isDesktop) {
+    // Desktop flow: redirect to website (or provide desktop-specific instructions)
+    window.location = websiteUrl;
 
-            // If the app is not installed, after a delay, redirect to the Play Store\
-            
-            var timeout = setTimeout(function() {
-                // Try opening the Play Store
-                window.location = playStoreUrl;
-            }, 2000);
-            
-        } else {
-            // For non-Android devices (e.g., PC), redirect to the website
-            window.location = websiteUrl;
-            
-        }
+} else {
+    // Fallback for other platforms (unknown or unsupported platforms)
+    window.location = websiteUrl;
+}
 
-        // Clear the timeout if the app is successfully opened
-        window.onblur = function() {
-            clearTimeout(timeout);
-        };
+// Clear timeout when app is opened (user navigates away from the page)
+window.onblur = function() {
+    clearTimeout(timeout);
+};
+
     
 
   return (
