@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 function EnrollmentClass() {
         const [buffering, setBuffering]=useState(true);
         const { classid } = useParams()
-        console.log(classid);
         
         // Define the deep link URL to open the app
         var appUrl = "intent://enrollclass#Intent;scheme=https;package=alamaan.ois;end";
@@ -27,11 +26,11 @@ function EnrollmentClass() {
                 // Try opening the Play Store
                 window.location = playStoreUrl;
             }, 2000);
-            setBuffering(false)
+            // setBuffering(false)
         } else {
             // For non-Android devices (e.g., PC), redirect to the website
             window.location = websiteUrl;
-            setBuffering(false)
+            // setBuffering(false)
         }
 
         // Clear the timeout if the app is successfully opened
@@ -43,7 +42,6 @@ function EnrollmentClass() {
   return (
     <div className='flex flex-col items-center justify-center min-w-screen min-h-screen  bg-gray-900 text-blue-950 text-4xl'>
       {buffering?<h1 className='text-blue-950 text-4xl'>Loading..</h1>:""}
-      {classid}
     </div>
   )
 }
