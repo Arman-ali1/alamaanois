@@ -19,6 +19,7 @@ import ComingSoon from "./pages/ComingSoon";
 import Footer from "./components/Footer";
 import EnrollmentClass from "./components/EnrollmentClass/EnrollmentClass.jsx";
 
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/donate" element={<ComingSoon />} />
           <Route path="/enrollinclass/:classid" element={<EnrollmentClass />} />
+
           //https://www.alamaanois.com/enrollinclass?classid=9651253
 
         </Routes>
