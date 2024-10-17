@@ -21,16 +21,17 @@ function EnrollmentClass() {
             // Try to open the app using the deep link
             window.location = appUrl;
 
-            // If the app is not installed, after a delay, redirect to the Play Store
+            // If the app is not installed, after a delay, redirect to the Play Store\
+            
             var timeout = setTimeout(function() {
                 // Try opening the Play Store
                 window.location = playStoreUrl;
             }, 2000);
-            // setBuffering(false)
+            
         } else {
             // For non-Android devices (e.g., PC), redirect to the website
             window.location = websiteUrl;
-            // setBuffering(false)
+            
         }
 
         // Clear the timeout if the app is successfully opened
