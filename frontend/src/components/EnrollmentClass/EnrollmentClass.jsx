@@ -23,14 +23,14 @@ function EnrollmentClass() {
             window.location = androidAppUrl;
             var timeout = setTimeout(function() {
                 window.location = playStoreUrl;
-            }, 5000);
+            }, 8000);
 
             } else if (isIOS) {
                 // iOS flow: try deep linking, fallback to App Store
                 window.location = iOSAppUrl;
                 var timeout = setTimeout(function() {
                     window.location = appStoreUrl;
-                }, 5000);
+                }, 8000);
 
             } else if (isDesktop) {
                 // Desktop flow: redirect to website (or provide desktop-specific instructions)
