@@ -5,25 +5,25 @@ function EnrollmentClass() {
         const [buffering, setBuffering]=useState(true);
         const { classid } = useParams()
         
-        // Define the deep link URL to open the app
-        // Define URLs for app deep linking, Play Store, App Store, and website
+                // Define the deep link URL to open the app
+                // Define URLs for app deep linking, Play Store, App Store, and website
         var androidAppUrl = "intent://enrollclass/#Intent;scheme=https;package=alamaan.ois;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dalamaan.ois;end";
         var iOSAppUrl = "alamaan://enrollclass"; // Hypothetical iOS deep link (replace with your actual scheme)
         var playStoreUrl = "https://play.google.com/store/apps/details?id=alamaan.ois";
         var appStoreUrl = "https://apps.apple.com/app/id123456789"; // Replace with actual App Store URL
         var websiteUrl = "https://www.alamaanois.com/";
 
-// User-agent detection for Android, iOS, and desktop (Windows, macOS)
+                // User-agent detection for Android, iOS, and desktop (Windows, macOS)
         var isAndroid = /Android/i.test(navigator.userAgent);
         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
         var isDesktop = /Windows|Macintosh/i.test(navigator.userAgent);
 
         if (isAndroid) {
-            // Android flow: try deep linking, fallback to Play Store
+                // Android flow: try deep linking, fallback to Play Store
             window.location = androidAppUrl;
             var timeout = setTimeout(function() {
                 window.location = playStoreUrl;
-            }, 2000);
+            }, 5000);
 
             } else if (isIOS) {
                 // iOS flow: try deep linking, fallback to App Store
@@ -41,7 +41,7 @@ function EnrollmentClass() {
                 window.location = websiteUrl;
             }
 
-// Clear timeout when app is opened (user navigates away from the page)
+                // Clear timeout when app is opened (user navigates away from the page)
             window.onblur = function() {
                 clearTimeout(timeout);
             };
