@@ -19,10 +19,7 @@ import ComingSoon from "./pages/ComingSoon";
 import Footer from "./components/Footer";
 import EnrollmentClass from "./components/EnrollmentClass/EnrollmentClass.jsx";
 
-
 function App() {
-  const [count, setCount] = useState(0);
-
   const HeaderWrapper = () => {
     const location = useLocation();
     return location.pathname !== "/login" ? <Header /> : null;
@@ -30,31 +27,25 @@ function App() {
 
   const FooterWrapper = () => {
     const location = useLocation();
-
     return location.pathname !== "/login" ? <Footer /> : null;
   };
 
   return (
-    <>
-      <Router>
-        <HeaderWrapper />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<ComingSoon />} />
-          <Route path="/courses" element={<ComingSoon />} />
-          <Route path="/library" element={<ComingSoon />} />
-          <Route path="/blogs" element={<ComingSoon />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/donate" element={<ComingSoon />} />
-          <Route path="/enrollinclass/:classid" element={<EnrollmentClass />} />
-
-          //https://www.alamaanois.com/enrollinclass?classid=9651253
-
-        </Routes>
-        <FooterWrapper />
-      </Router>
-    </>
+    <Router>
+      <HeaderWrapper />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<ComingSoon />} />
+        <Route path="/courses" element={<ComingSoon />} />
+        <Route path="/library" element={<ComingSoon />} />
+        <Route path="/blogs" element={<ComingSoon />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/donate" element={<ComingSoon />} />
+        <Route path="/enrollinclass" element={<EnrollmentClass />} />
+      </Routes>
+      <FooterWrapper />
+    </Router>
   );
 }
 

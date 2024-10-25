@@ -1,50 +1,58 @@
-import React ,{useState} from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function EnrollmentClass() {
-        const [buffering, setBuffering]=useState(true);
-        const { classid } = useParams()
-        
-                // Define the deep link URL to open the app
-                // Define URLs for app deep linking, Play Store, App Store, and website
-        var androidAppUrl = "intent://enrollclass/#Intent;scheme=https;package=alamaan.ois;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dalamaan.ois;end";
-        
-        var playStoreUrl = "https://play.google.com/store/apps/details?id=alamaan.ois";
-        var appStoreUrl = "https://apps.apple.com/app/id123456789"; // Replace with actual App Store URL
-        var websiteUrl = "https://www.alamaanois.com/";
+    const [buffering, setBuffering] = useState(true);
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const classId = queryParams.get('classid'); // Get classId from the query params
 
-                // User-agent detection for Android, iOS, and desktop (Windows, macOS)
-        var isAndroid = /Android/i.test(navigator.userAgent);
-        var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-        var isDesktop = /Windows|Macintosh/i.test(navigator.userAgent);
+    // Define the deep link URLs
+    const androidAppUrl = `intent://enrollclass?classid=${classId}/#Intent;scheme=https;package=alamaan.ois;end`;
+    const playStoreUrl = "https://play.google.com/store/apps/details?id=alamaan.ois";
+    const iOSAppUrl = `alamaan://enrollclass?classid=${classId}`; 
+    const homepageUrl = "/";
+    const appStoreUrl = "https://apps.apple.com/app/id123456789"; 
 
-        if (!isAndroid) {
-                // Android flow: try deep linking, fallback to Play Store
-                 window.location = websiteUrl;
+    // User-agent detection
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isDesktop = /Windows|Macintosh/i.test(navigator.userAgent);
 
-            }  else if(isAndroid) {
-                // Fallback for other platforms (unknown or unsupported platforms)
+    useEffect(() => {
+        try {
+            if (isAndroid) {
                 window.location = androidAppUrl;
-                var timeout = setTimeout(function() {
-                window.location = playStoreUrl;
-            }, 8000);
+
+                const timeout = setTimeout(() => {
+                    window.location = playStoreUrl;
+                }, 2000);
+
+                window.onblur = () => clearTimeout(timeout);
+            } else if (isIOS) {
+                window.location = iOSAppUrl;
+
+                const timeout = setTimeout(() => {
+                //     window.location = appStoreUrl;
+                    window.location = homepageUrl; // no ios app so send to homepage for now
+                }, 2000);
+
+                window.onblur = () => clearTimeout(timeout);
+            } else if (isDesktop) {
+                window.location = homepageUrl; 
+            } else {
+                window.location = homepageUrl; 
             }
-        else{
-                window.location = websiteUrl;
+        } catch (error) {
+            alert("An error occurred: " + error.message);
         }
+    }, [classId, androidAppUrl, appStoreUrl, iOSAppUrl, isAndroid, isDesktop, isIOS, playStoreUrl, homepageUrl]);
 
-                // Clear timeout when app is opened (user navigates away from the page)
-            window.onblur = function() {
-                clearTimeout(timeout);
-            };
-
-    
-
-  return (
-    <div className='flex flex-col items-center justify-center min-w-screen min-h-screen  bg-gray-900 text-blue-950 text-4xl'>
-      {buffering?<h1 className='text-blue-950 text-4xl'>Loading..</h1>:""}
-    </div>
-  )
+    return (
+        <div className='flex flex-col items-center justify-center min-w-screen min-h-screen bg-gray-900 text-blue-950 text-4xl'>
+            {buffering ? <h1>Loading...</h1> : <h1>Class ID: {classId}</h1>}
+        </div>
+    );
 }
 
-export default EnrollmentClass
+export default EnrollmentClass;
