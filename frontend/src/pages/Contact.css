@@ -1,0 +1,23 @@
+.contain{
+    background: url(../assets/images/bg.jpg);
+}
+
+  .logincontain {
+    background: url(../assets/images/bglogin.jpg) no-repeat center center/cover;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .fullscreen-container {
+    display: flex;
+    height: 100vh;
+  }
+
+  @media (max-width : 768px) {
+    .logincontain {
+        flex-direction: column;
+        display: flex;
+    }
+  }

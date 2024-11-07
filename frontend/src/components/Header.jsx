@@ -12,10 +12,10 @@ import { NavLink } from "react-router-dom";
 const HeaderNew = () => {
 
   const location = useLocation();
-    const userData = location.state?.UserStatus || {};
-    let login=userData.lgn;
-    console.log("login===",login);
-    
+  const userData = location.state?.UserStatus || {};
+  let login = userData.lgn;
+  console.log("login===", login);
+
   const navigate = useNavigate(); // Hook to navigate programmatically
 
   const handleLoginClick = () => {
@@ -25,12 +25,12 @@ const HeaderNew = () => {
     navigate("/donate");
   };
   return (
-    <Disclosure as="nav" className="bg-gray-800 fixed top-0 w-full z-10">
+    <Disclosure as="nav" className="bg-white fixed top-0 w-full z-10">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button */}
-            <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <DisclosureButton className="inline-flex items-center justify-center shadow-sm rounded-md p-2 text-black hover:shadow-lg hover:shadow-gray-200 hover:text-black active:text-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
               <XMarkIcon className="hidden h-6 w-6" aria-hidden="true" />
@@ -50,8 +50,7 @@ const HeaderNew = () => {
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    `text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-                      isActive ? "bg-gray-900 text-white" : ""
+                    `text-black  hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium ${isActive ? " shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
                     }`
                   }
                 >
@@ -61,37 +60,44 @@ const HeaderNew = () => {
                   <NavLink
                     to="/about"
                     className={({ isActive }) =>
-                      `text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-                        isActive ? "bg-gray-900 text-white" : ""
+                      `text-black  hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
                       }`
                     }
                   >
                     About
                   </NavLink>
                   {/* Dropdown Menu */}
-                  <div className="absolute left-0 hidden w-48 bg-gray-800 rounded-md shadow-lg group-hover:block">
+                  <div className="absolute left-0 hidden w-48 bg-white rounded-md shadow-lg group-hover:block">
                     <NavLink
                       to="/about#alamaan"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        `block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                    >
                       Al Amaan OIS
                     </NavLink>
                     <NavLink
                       to="/about#muftisalmanazhari"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        `block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                    >
                       Mufti Salman Azhari Sahab
                     </NavLink>
                     <NavLink
                       to="/about#ourscholars"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        ` block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                    >
                       Our Scholars
                     </NavLink>
                     <NavLink
                       to="/about#ourmission"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        ` block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                    >
                       Our Mission
                     </NavLink>
                   </div>
@@ -100,8 +106,7 @@ const HeaderNew = () => {
                 <NavLink
                   to="/courses"
                   className={({ isActive }) =>
-                    `block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium ${
-                      isActive ? "bg-gray-900 text-white" : ""
+                    `text-black  hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
                     }`
                   }
                 >
@@ -111,49 +116,60 @@ const HeaderNew = () => {
                   <NavLink
                     to="/library"
                     className={({ isActive }) =>
-                      `text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-                        isActive ? "bg-gray-900 text-white" : ""
+                      `text-black  hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
                       }`
                     }
                   >
                     Library
                   </NavLink>
                   {/* Dropdown Menu */}
-                  <div className="absolute left-0 hidden w-48 bg-gray-800 rounded-md shadow-lg group-hover:block">
+                  <div className="absolute left-0 hidden w-48 bg-white rounded-md shadow-lg group-hover:block">
                     <NavLink
                       to="/library#darsibooks"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        ` block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                      >
                       Darsi Books
                     </NavLink>
                     <NavLink
                       to="/library#quraan"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        ` block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                      >
                       Quraan
                     </NavLink>
                     <NavLink
                       to="/library#hadith"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        ` block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                      >
                       Hadith
                     </NavLink>
                     <NavLink
                       to="/library#aqaid"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        ` block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                      >
                       Aqaid
                     </NavLink>
                     <NavLink
                       to="/library#fiqah"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        ` block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                      >
                       Fiqah
                     </NavLink>
                     <NavLink
                       to="/library#orientalism"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                    >
+                      className={({ isActive }) =>
+                        ` block text-black  hover:text-gray-300 px-3 py-3 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
+                        }`
+                      }                      >
                       Orientalism
                     </NavLink>
                   </div>
@@ -161,8 +177,7 @@ const HeaderNew = () => {
                 <NavLink
                   to="/blogs"
                   className={({ isActive }) =>
-                    `text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-                      isActive ? "bg-gray-900 text-white" : ""
+                    `text-black  hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
                     }`
                   }
                 >
@@ -171,8 +186,7 @@ const HeaderNew = () => {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    `text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-                      isActive ? "bg-gray-900 text-white" : ""
+                    `text-black  hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium ${isActive ? "shadow-lg shadow-gray-400 text-black border-2 border-b-black" : ""
                     }`
                   }
                 >
@@ -184,15 +198,15 @@ const HeaderNew = () => {
           <div className=" inset-y-0 right-0 flex items-center space-x-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
-              className="relative rounded-full bg-green-900 py-2 px-3 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
+              className="relative rounded-md bg-green-900 py-2 px-3 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white shadow-lg shadow-gray-400 focus:ring-offset-2 focus:ring-offset-green-600"
               onClick={handleLoginClick}
             >
               <span className="sr-only">Login</span>
-              {login?login:"Login"}
+              {login ? login : "Login"}
             </button>
             <button
               type="button"
-              className="relative rounded-full bg-green-900 py-2 px-3 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
+              className="relative rounded-md bg-green-900 py-2 px-3 shadow-lg shadow-gray-400 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
               onClick={handleDonateClick}
             >
               <span className="sr-only">Donate</span>
@@ -207,41 +221,33 @@ const HeaderNew = () => {
         <div className="space-y-1 px-2 pt-2 pb-3">
           <NavLink
             to="/"
-            className={({ isActive }) =>
-              `block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium ${
-                isActive ? "bg-gray-900 text-white" : ""
-              }`
-            }
+            className="text-black block border-2 w-full hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"
           >
             Home
           </NavLink>
           <Disclosure as="div" className="relative">
-            <DisclosureButton className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+            <DisclosureButton className="text-black block text-start border-2 w-full hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black">
               About
             </DisclosureButton>
-            <DisclosurePanel className="space-y-1 bg-gray-700 rounded-md p-2">
+            <DisclosurePanel className="space-y-1 bg-white rounded-md p-2">
               <NavLink
                 to="/about#alamaan"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Al Amaan OIS
               </NavLink>
               <NavLink
                 to="/about#muftisalmanazhari"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Mufti Salman Azhari Sahab
               </NavLink>
               <NavLink
                 to="/about#ourscholars"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Our Scholars
               </NavLink>
               <NavLink
                 to="/about#ourmission"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Our Mission
               </NavLink>
             </DisclosurePanel>
@@ -249,74 +255,56 @@ const HeaderNew = () => {
           {/* Add more mobile links as needed */}
           <NavLink
             to="/courses"
-            className={({ isActive }) =>
-              `block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium ${
-                isActive ? "bg-gray-900 text-white" : ""
-              }`
-            }
+            className="text-black block text-start border-2 w-full hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"
           >
             Courses
           </NavLink>
           <Disclosure as="div" className="relative">
-            <DisclosureButton className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+            <DisclosureButton className="text-black block text-start border-2 w-full hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black">
               Library
             </DisclosureButton>
-            <DisclosurePanel className="space-y-1 bg-gray-700 rounded-md p-2">
+            <DisclosurePanel className="space-y-1 bg-white rounded-md p-2">
               <NavLink
                 to="/library#darsibooks"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block text-start border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Darsi Books
               </NavLink>
               <NavLink
                 to="/library#quraan"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block text-start border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Quraan
               </NavLink>
               <NavLink
                 to="/library#hadith"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block text-start border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Hadith
               </NavLink>
               <NavLink
                 to="/library#aqaid"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block text-start border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Aqaid
               </NavLink>
               <NavLink
                 to="/library#fiqah"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block text-start border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Fiqah
               </NavLink>
               <NavLink
                 to="/library#orientalism"
-                className="block text-gray-300 hover:bg-gray-600 px-3 py-2 rounded-md"
-              >
+                className="text-black block text-start border-2 w-[50%] hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"              >
                 Orientalism
               </NavLink>
             </DisclosurePanel>
           </Disclosure>
           <NavLink
             to="/contact"
-            className={({ isActive }) =>
-              `block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium ${
-                isActive ? "bg-gray-900 text-white" : ""
-              }`
-            }
+            className="text-black block text-start border-2 w-full hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"
           >
             Contact
           </NavLink>
           <NavLink
             to="/blogs"
-            className={({ isActive }) =>
-              `block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium ${
-                isActive ? "bg-gray-900 text-white" : ""
-              }`
-            }
+            className="text-black block text-start border-2 w-full hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium  border-b-black"
           >
             Blogs
           </NavLink>
