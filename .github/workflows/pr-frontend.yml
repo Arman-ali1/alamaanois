@@ -1,0 +1,29 @@
+name: Frontend PR testing
+
+on:
+  pull_request:
+    branches:
+      - master  
+    types: [opened, synchronize]
+
+jobs:
+  deploy:
+    name: Deploy and Test PR
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js (for frontend)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # 
+      # Install frontend dependencies and run tests
+      - name: Install and Test Frontend
+        working-directory: ./frontend
+        run: |
+          npm install
+          npm run dev
