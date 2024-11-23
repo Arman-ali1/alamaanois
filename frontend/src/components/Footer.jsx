@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div class="bg-gray-800 py-4 text-gray-400">
+        <div class="shadow-lg shadow-gray-200 bg-white py-4 text-black0">
           <div class="container px-4 mx-auto">
             <div class="-mx-4 flex flex-wrap justify-between">
               <div class="px-4 my-4 w-full xl:w-1/5">
@@ -43,32 +43,32 @@ const Footer = () => {
                 </div>
                 <ul class="leading-8">
                   <li>
-                    <a href="/" class="hover:text-green-400">
+                    <a href="/" class="hover:text-gray-400">
                       Home
                     </a>
                   </li>
                   <li>
-                    <a href="/about" class="hover:text-green-400">
+                    <a href="/about" class="hover:text-gray-400">
                       About Us
                     </a>
                   </li>
                   <li>
-                    <a href="/courses" class="hover:text-green-400">
+                    <a href="/courses" class="hover:text-gray-400">
                       Courses
                     </a>
                   </li>
                   <li>
-                    <a href="/library" class="hover:text-green-400">
+                    <a href="/library" class="hover:text-gray-400">
                       Library
                     </a>
                   </li>
                   <li>
-                    <a href="/blogs" class="hover:text-green-400">
+                    <a href="/blogs" class="hover:text-gray-400">
                       Blogs
                     </a>
                   </li>
                   <li>
-                    <a href="/contact" class="hover:text-green-400">
+                    <a href="/contact" class="hover:text-gray-400">
                       Contact
                     </a>
                   </li>
@@ -84,7 +84,7 @@ const Footer = () => {
                   <li>
                     <HashLink
                       to="/blogs#divshaikhabdulqadirjilani"
-                      className="hover:text-green-400"
+                      className="hover:text-gray-400"
                     >
                       Hazrat Shaikh Abdul Qadir Jilani رحمة الله عليه
                     </HashLink>
@@ -92,13 +92,13 @@ const Footer = () => {
                   <li>
                     <HashLink
                       to="/blogs#divahmedrazakhan"
-                      className="hover:text-green-400"
+                      className="hover:text-gray-400"
                     >
                       Imam Ahmed Raza Khan رحمة الله عليه
                     </HashLink>
                   </li>
                   <li>
-                    <a href="/blogs" class="hover:text-green-400">
+                    <a href="/blogs" class="hover:text-gray-400">
                       See More
                     </a>
                   </li>
@@ -112,7 +112,7 @@ const Footer = () => {
                 </div>
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-green-400 hover:border-green-400"
+                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-gray-400 hover:border-gray-400"
                 >
                   <svg
                     class="w-4 h-4 fill-current"
@@ -124,7 +124,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-green-400 hover:border-green-400"
+                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-gray-400 hover:border-gray-400"
                 >
                   <svg
                     class="w-4 h-4 fill-current"
@@ -136,7 +136,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-green-400 hover:border-green-400"
+                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-gray-400 hover:border-gray-400"
                 >
                   <svg
                     class="w-4 h-4 fill-current"
@@ -148,7 +148,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-green-400 hover:border-green-400"
+                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-gray-400 hover:border-gray-400"
                 >
                   <svg
                     class="w-4 h-4 fill-current"
@@ -160,7 +160,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-green-400 hover:border-green-400"
+                  class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-gray-400 hover:border-gray-400"
                 >
                   <svg
                     class="w-4 h-4 fill-current"
@@ -174,7 +174,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div class="py-4 text-gray-100 downfooter bg-gray-900">
+        <div class="py-4 text-black downfooter bg-gray-200">
           <div class="container mx-auto px-4">
             <div class="-mx-4 flex flex-wrap justify-between">
               {/* <!-- Copyright Section --> */}
